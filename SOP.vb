@@ -14,6 +14,7 @@ Public Class SOP
     Public Sub loadItems(ByVal Institution As String, ByVal Optional loadBranches As Boolean = False)
         Me.itemList = New List(Of SOP_Items)
         Dim gq As clsGenericQuery = New clsGenericQuery("select * from SOP_Items where Institution=" & Institution, UtilitySOP.connstr())
+        Dim x As String
 
         If Not gq.IsNew Then
             For Each r As DataRow In gq.MyDataTable.Rows
